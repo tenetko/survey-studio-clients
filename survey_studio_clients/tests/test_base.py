@@ -1,6 +1,6 @@
 import requests_mock
 
-from src.core.base import SurveyStudioClient
+from survey_studio_clients.core.base import SurveyStudioClient
 
 client = SurveyStudioClient("faketoken")
 

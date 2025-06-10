@@ -1,10 +1,10 @@
 from time import sleep
 
 import pandas as pd
-
 import requests
-from src.core.base import SurveyStudioClient
-from src.requests.outgoing_calls_request import OUTGOING_CALLS_REQUEST
+
+from survey_studio_clients.core.base import SurveyStudioClient
+from survey_studio_clients.requests.outgoing_calls_request import OUTGOING_CALLS_REQUEST
 
 
 class SurveyStudioOutgoingCallsClient(SurveyStudioClient):
