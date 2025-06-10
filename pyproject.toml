@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "survey studio client"
+name = "survey-studio-clients"
 version = "0.1.0"
 description = ""
 authors = ["Michael Tenetko <tenetko@users.noreply.github.com>"]
