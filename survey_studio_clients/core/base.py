@@ -37,4 +37,4 @@ class SurveyStudioClient:
         response = requests.get(url)
         with zipfile.ZipFile(BytesIO(response.content)) as zip:
             with zip.open(zip.namelist()[0]) as input_file:
-                return pd.read_excel(input_file, engine="openpyxl")
+                return pd.read_csv(input_file, sep=";", encoding='utf-8', low_memory=False)

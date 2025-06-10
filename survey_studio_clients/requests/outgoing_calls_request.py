@@ -1,6 +1,6 @@
 OUTGOING_CALLS_REQUEST = """
 {{
-  "callsExportType": 1,
+  "callsExportType": 5,
   "allCallsFiltrationMode": 0,
   "from": "{date_from}",
   "to": "{date_to}",
