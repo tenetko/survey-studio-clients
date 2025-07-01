@@ -7,9 +7,6 @@ from survey_studio_clients.requests.outgoing_calls_request import OUTGOING_CALLS
 class SurveyStudioOutgoingCallsClient(SurveyStudioClient):
     URL = "https://api.survey-studio.com/v1/calls/export"
 
-    def __init__(self, token: str) -> None:
-        super().__init__(token)
-
     def get_dataframe(self, project_id: str, date_from: str, date_to: str) -> pd.DataFrame:
         data = REQUEST.format(project_id=project_id, date_from=date_from, date_to=date_to)
         request_id = self._make_post_request(self.URL, data)
