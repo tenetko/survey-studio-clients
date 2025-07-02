@@ -1,6 +1,6 @@
 import pandas as pd
 
-from survey_studio_clients.core.base import SurveyStudioClient
+from survey_studio_clients.api_clients.base import SurveyStudioClient
 from survey_studio_clients.requests.operator_work_time_request import OPERATOR_WORK_TIME_REQUEST as REQUEST
 
 

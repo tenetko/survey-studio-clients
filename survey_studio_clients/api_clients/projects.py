@@ -3,7 +3,7 @@ from time import sleep
 import pandas as pd
 import requests
 
-from survey_studio_clients.core.base import SurveyStudioClient
+from survey_studio_clients.api_clients.base import SurveyStudioClient
 from survey_studio_clients.requests.projects_request import PROJECTS_REQUEST as REQUEST
 
 

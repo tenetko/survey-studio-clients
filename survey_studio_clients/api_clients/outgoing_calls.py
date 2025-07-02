@@ -1,6 +1,6 @@
 import pandas as pd
 
-from survey_studio_clients.core.base import SurveyStudioClient
+from survey_studio_clients.api_clients.base import SurveyStudioClient
 from survey_studio_clients.requests.outgoing_calls_request import OUTGOING_CALLS_REQUEST as REQUEST
 
 
