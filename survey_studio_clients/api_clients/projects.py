@@ -69,9 +69,10 @@ class SurveyStudioProjectsClient(SurveyStudioClient):
                 sleep(2)  # to prevent an error from the API
                 file_url = self._make_get_request(url, self._get_headers())
                 if file_url:
+                    print(f"----->{file_url}")
                     return self._make_dataframe_from_result_file(file_url, self._make_dataframe_from_excel)
 
-    def _post_dataframe_request(self, params: dict) -> str:
+    def _post_dataframe_request(self, params: dict) -> str | None:
         url = self.PROJECT_RESULTS_URL.format(project_id=params["project_id"])
         data = REQUEST.format(counter_id=params["counter_id"], date_from=params["date_from"], date_to=params["date_to"])
         response = requests.post(url=url, data=data, headers=self._get_headers()).json()

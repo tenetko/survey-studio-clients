@@ -11,5 +11,6 @@ class SurveyStudioOperatorWorkTimeClient(SurveyStudioClient):
         data = REQUEST.format(date_from=date_from, date_to=date_to)
         request_id = self._make_post_request(self.URL, data)
         file_url = self._get_result_file(request_id)
+        print(f"----->{file_url}")
 
         return self._make_dataframe_from_result_file(file_url, self._make_dataframe_from_excel)
