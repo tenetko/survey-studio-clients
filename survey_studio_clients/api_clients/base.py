@@ -23,7 +23,12 @@ class SurveyStudioClient:
         if status_code != 200:
             raise Exception(f"Results request ended with HTTP {status_code}.")
 
-        response = response.json()
+        try:
+            response = response.json()
+
+        except requests.exceptions.JSONDecodeError as e:
+            print(e)
+            print(response.text[:100])
 
         if not response["isSuccess"]:
             return None
@@ -55,7 +60,12 @@ class SurveyStudioClient:
     def _make_get_request(url: str, headers: dict) -> str | None:
         response = requests.get(url=url, headers=headers)
         status_code = response.status_code
-        response = response.json()
+        try:
+            response = response.json()
+
+        except requests.exceptions.JSONDecodeError as e:
+            print(e)
+            print(response.text[:100])
 
         if status_code != 200:
             raise Exception(f"Results request ended with HTTP {status_code}.")
@@ -71,7 +81,6 @@ class SurveyStudioClient:
     @staticmethod
     def _make_dataframe_from_result_file(url: str, maker_function) -> pd.DataFrame:
         response = requests.get(url)
-        res = pd.DataFrame()
 
         if response.headers["Content-type"] == "application/zip":
             with zipfile.ZipFile(BytesIO(response.content)) as zip:
