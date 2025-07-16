@@ -26,19 +26,7 @@ class DailyCountersPageScraper:
     def __init__(self, url: str) -> None:
         self.url = url
 
-    def get_value_by_counter_name(self, counter_name: str) -> int:
-        yesterday = datetime.now().astimezone(ZoneInfo("Europe/Moscow")) - timedelta(days=1)
-        counter_name = self.get_daily_counter_name(yesterday)
-
-        return self._get_value(counter_name)
-
-    def get_daily_counter_name(self, date: datetime) -> str:
-        month = date.month
-        day = date.day
-
-        return f"{day} {self.MONTH_TO_STRING[month]}"
-
-    def _get_value(self, counter_name_to_find: str) -> int | None:
+    def _get_value_by_counter_name(self, counter_name_to_find: str) -> int | None:
         res = requests.get(self.url)
         if res.status_code != HTTPStatus.OK:
             raise requests.HTTPError
