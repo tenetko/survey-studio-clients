@@ -26,7 +26,7 @@ class DailyCountersPageScraper:
     def __init__(self, url: str) -> None:
         self.url = url
 
-    def _get_value_by_counter_name(self, counter_name_to_find: str) -> int | None:
+    def get_value_by_counter_name(self, counter_name_to_find: str) -> int | None:
         res = requests.get(self.url)
         if res.status_code != HTTPStatus.OK:
             raise requests.HTTPError
