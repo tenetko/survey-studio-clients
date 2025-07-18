@@ -31,6 +31,7 @@ class SurveyStudioClient:
             print(response.text[:100])
 
         if not response["isSuccess"]:
+            print(response)
             return None
 
         return response["body"]
