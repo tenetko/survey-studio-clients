@@ -17,7 +17,7 @@ OUTGOING_CALLS_REQUEST = """
   "callResultGroup": null,
   "isPilot": null,
   "isListened": null,
-  "operatorTalk": null,
+  "operatorTalk": {operator_talk},
   "hangupInitiator": null,
   "archiveSingleXlsxResultFile": true,
   "includeRecordFileName": null,
