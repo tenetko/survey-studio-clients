@@ -8,6 +8,7 @@ class SurveyStudioOutgoingCallsClient(SurveyStudioClient):
     URL = "https://api.survey-studio.com/v1/calls/export"
 
     def get_dataframe(self, project_id: str, date_from: str, date_to: str, operator_talk: bool) -> pd.DataFrame:
+        operator_talk = str(operator_talk).lower()
         data = REQUEST.format(project_id=project_id, date_from=date_from, date_to=date_to, operator_talk=operator_talk)
         request_id = self._make_post_request(self.URL, data)
         file_url = self._get_result_file(request_id)
