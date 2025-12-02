@@ -4,7 +4,6 @@ from io import BytesIO
 from time import sleep
 
 import pandas as pd
-import polars
 import requests
 
 REQUEST = ""
@@ -96,7 +95,7 @@ class SurveyStudioClient:
 
     @staticmethod
     def _make_dataframe_from_excel(input_file: io.BytesIO) -> pd.DataFrame:
-        return polars.read_excel(input_file)
+        return pd.read_excel(input_file, engine="calamine")
 
     @staticmethod
     def _make_dataframe_from_csv(input_file: io.BytesIO) -> pd.DataFrame:
