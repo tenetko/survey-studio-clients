@@ -1,5 +1,6 @@
 from time import sleep
 
+import pandas as pd
 import requests
 
 from survey_studio_clients.api_clients.projects import SurveyStudioProjectsClient
