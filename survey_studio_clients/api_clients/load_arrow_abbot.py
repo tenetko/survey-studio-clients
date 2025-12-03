@@ -29,7 +29,6 @@ class SurveyStudioLoadArrowAbbotClient(SurveyStudioProjectsClient):
     def _post_dataframe_request(self, params: dict) -> str | None:
         url = self.PROJECT_RESULTS_URL.format(project_id=params["project_id"])
         data = REQUEST.format(counter_id=params["counter_id"])
-        print(data)
         response = requests.post(url=url, data=data, headers=self._get_headers()).json()
 
         if not response["isSuccess"]:
