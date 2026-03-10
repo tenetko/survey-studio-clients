@@ -52,7 +52,7 @@ class SurveyStudioClient:
                 is_first_request = False
 
             else:
-                sleep(2)  # to prevent an error
+                sleep(6)  # to prevent an error
                 file_url = self._make_get_request(url, self._get_headers())
                 if file_url:
                     return file_url
